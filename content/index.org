@@ -1,0 +1,17 @@
+#+title: SIGARCH @ UIUC
+#+ATTR_HTML: :width 300px
+[[./resources/uiuc_SIGARCH_logo.png]]
+* Meetings
+We host weekly meetings *wednesdays* from *4-5pm* in *ECEB 2013*. These meetings use a split format, with the first half devoted to the high level summary of a relevant topic, and the second half devoted to the discussion of a paper. We're always looking for people interested in running meetings, so if you have an idea, reach out!
+For an archive of past meetings, see [[./meetings.org][here]].
+
+* Workshops
+New for *Fall 2023*, we will be hosting semi-regular weekend workshops directed at giving members hands on exposure to projects in computer architecture and chip design.
+For an archive of past workshops, see [[./workshops.org][here]].
+
+* Join Us
+If you're interested in being a part of SIGARCH, join our [[https:https://discord.gg/DsfB26KjsP][discord]] to stay in the loop.
+We host weekly meetings *wednesdays* from *4-5pm* in *ECEB 2013*, and semi-regular workshops on *saturdays*.
+
+* Contact
+If you need to get in touch, either message *crawfish#0135* or *nebu#5607* on discord, or email us at one of *{noellec3, avn5}@illinois.edu*.
