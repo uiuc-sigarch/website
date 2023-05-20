@@ -5,10 +5,10 @@
 ;; Author: Noelle Crawford <noellec3@illinois.edu>
 ;; Maintainer: Noelle Crawford <noellec3@illinois.edu>
 ;; Created: May 18, 2023
-;; Modified: May 18, 2023
-;; Version: 0.0.1
-;; Keywords: abbrev bib c calendar comm convenience data docs emulations extensions faces files frames games hardware help hypermedia i18n internal languages lisp local maint mail matching mouse multimedia news outlines processes terminals tex tools unix vc wp
-;; Homepage: https://github.com/noelle/build-site
+;; Modified: May 19, 2023
+;; Version: 0.0.2
+;; Keywords: html org org-export-html-to-html ox-html ox-publish
+;; Homepage: https://github.com/noelle/build-site ;; seems to be a dead link.
 ;; Package-Requires: ((emacs "24.3"))
 ;;
 ;; This file is not part of GNU Emacs.
@@ -46,6 +46,7 @@
       (list
        (list "org-site:main"
              :recursive t
+             :base-extension "org"
              :base-directory "./content"
              :publishing-function 'org-html-publish-to-html
              :publishing-directory "./public"
@@ -53,7 +54,20 @@
              :with-creator nil
              :with-toc nil
              :section-numbers nil
-             :time-stamp-file nil)))
+             :time-stamp-file nil)
+       (list "org-static"
+             :base-directory "./content"
+             :base-extension "png\\|jpg\\|gif\\|pdf"
+             :publishing-directory "./public"
+             :recursive t
+             :publishing-function 'org-publish-attachment)
+       (list "org-fonts"
+             :base-directory "./content/fonts"
+             :base-extension "ttf\\|eot\\|svg\\|css\\|woff"
+             :publishing-directory "./public/fonts"
+             :recursive t
+             :publishing-function 'org-publish-attachment)
+       ))
 
 ;; Generate the site output
 (org-publish-all t)

@@ -1,8 +1,10 @@
 #+title: Meetings
+#+include: header.org
+
 * Summary Meetings
-1. The SmartNIC [slides]
-2. Cluster Computing [slides]
-3. Out of Order Execution [slides]
+1. The SmartNIC =[slides]=
+2. Cluster Computing =[slides]=
+3. Out of Order Execution =[slides]=
 * Paper Discussion
-1. Optimized Encryption for Flexible Processors [slides] [paper]
-2. CoLT [slides] [paper]
+1. Optimized Encryption for Flexible Processors =[slides]= =[paper]=
+2. CoLT =[slides]= =[paper]=
