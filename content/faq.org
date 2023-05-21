@@ -62,7 +62,7 @@
       - Once you know Verilog, try implementing a basic processor
         ([[https://github.com/nebhrajani-a/lc3][like LC-3]]), and running some basic programs in
         simulation.[fn:4] Synthesize your core to an FPGA, and run
-        a similar set of program there.
+        a similar set of programs there.
       - Continuing --- pipeline your processor, implement a memory system,
         (caches!). Make your cache more efficient (is it
         write-back? pipelined? lockup-free?). Add branch
