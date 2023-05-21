@@ -16,7 +16,7 @@
    there are various routes you can take.
 
    1. *Classes:* The ECE and CS departments at UIUC both offer classes
-      in computer architecture or related topics:
+      in computer architecture and related topics:
       #+ATTR_LATEX: :booktabs t
       | Class                      | Content                                                                                                                                                           | Comments                                                                                                                                                 |
       |----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
