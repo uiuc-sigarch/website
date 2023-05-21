@@ -60,7 +60,7 @@
              :time-stamp-file nil)
        (list "org-static"
              :base-directory "./content"
-             :base-extension "png\\|jpg\\|gif\\|pdf"
+             :base-extension "png\\|jpg\\|gif\\|pdf\\|svg\\|ico\\|xml\\|webmanifest"
              :publishing-directory "./public"
              :recursive t
              :publishing-function 'org-publish-attachment)

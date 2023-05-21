@@ -1,7 +1,7 @@
 #+title: SIGARCH @ UIUC
 #+include: header.org
 #+ATTR_HTML: :width 300px
-[[./resources/uiuc_SIGARCH_logo.png]]
+[[./resources/sigarch.svg]]
 
 We are the University of Illinois Urbana-Champaign's student-run
 computer architecture interest group.
