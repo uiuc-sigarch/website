@@ -30,10 +30,12 @@
   (package-refresh-contents))
 
 ;; Install dependencies
+(package-install 'org)
 (package-install 'htmlize)
 
 ;; Load the publishing system
 (require 'ox-publish)
+(require 'ox-html)
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil)            ;; Don't show validation link
