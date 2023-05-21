@@ -4,16 +4,13 @@
 1. *What is computer architecture?*
 
    Computer architecture is the study of how computer systems are
-   built.
+   built. @noelle TODO.
 
 2. *Why is it important?*
 
-   The field of computer architecture is extremely fast moving and
-   affects nearly every field since computers are so widespread.
-   Making a Python application 5% faster means you made a Python
-   application 5% faster --- making a CPU 2% faster means /everything/
+   @noelle TODO.
 
-4. *I'm interested in computer architecture, where should I start learning?*
+3. *I'm interested in computer architecture, where should I start learning?*
 
    A great place to start is coming to [[./meetings.org][SIGARCH meetings]]! Outside SIGARCH,
    there are various routes you can take.
@@ -39,49 +36,45 @@
       theory and writing actual implementations. We'll elaborate on
       both of these:
 
-      1. *Theory:* Here are some book recommendations:
-         - If you're in ECE, you've taken (or are going to take)
-           courses based on Patt and Patel's book: [[https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99908131312205899][Introduction to Computing Systems: From Bits and Gates to C and Beyond]].
-           This book covers the LC-3 architecture.
-         - Another good (also slightly unorthodox) book that goes top-down (instead of the
-           bottom-up approach Patt and Patel uses) is Bryant and
-           O'Hallaron's [[https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99454154312205899][Computer Systems: A Programmer's Perspective]].
-           Here's more on the [[http://csapp.cs.cmu.edu/2e/perspective.html][philosophy]] behind the book.
-         - For basic architecture knowledge, we recommend Patterson
-           and Hennessy's book, [[https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99362146912205899][Computer Organization and Design]]. Try
-           to get the RISC-V edition.
-         - For more advanced topics, see Hennessy and Patterson's book
-           [[https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99847468812205899][Computer Architecture: A Quantitative Approach]], which
-           covers memory hierarchies, out of order and superscalar
-           execution, and parallelism.
-         - The [[https://dblp.org/db/series/synthesis/cac.html][Synthesis Lectures on Computer Architecture]] cover a
-           single topic in great detail, and are a good read for more
-           advanced students.
+      *Theory:* Here are some book recommendations:
+      - If you're in ECE, you've taken (or are going to take)
+        courses based on Patt and Patel's book: [[https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99908131312205899][Introduction to Computing Systems: From Bits and Gates to C and Beyond]].
+        This book covers the LC-3 architecture.
+      - Another good (also slightly unorthodox) book that goes top-down (instead of the
+        bottom-up approach Patt and Patel uses) is Bryant and
+        O'Hallaron's [[https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99454154312205899][Computer Systems: A Programmer's Perspective]].
+        Here's more on the [[http://csapp.cs.cmu.edu/2e/perspective.html][philosophy]] behind the book.
+      - For basic architecture knowledge, we recommend Patterson
+        and Hennessy's book, [[https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99362146912205899][Computer Organization and Design]]. Try
+        to get the RISC-V edition.
+      - For more advanced topics, see Hennessy and Patterson's book
+        [[https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99847468812205899][Computer Architecture: A Quantitative Approach]], which
+        covers memory hierarchies, out of order and superscalar
+        execution, and parallelism.
+      - The [[https://dblp.org/db/series/synthesis/cac.html][Synthesis Lectures on Computer Architecture]] cover a
+        single topic in great detail, and are a good read for more
+        advanced students.
 
-      2. *Projects/Implementation:* Resources here are a bit more scarce:
-         - An excellent route is to learn some Verilog. Try [[https://hdlbits.01xz.net/wiki/Main_Page][HDLBits]]
-           while starting out. Unfortunately, the really hard part of
-           RTL design is verification, which isn't well-covered.
-         - Once you know Verilog, try implementing a basic processor
-           ([[https://github.com/nebhrajani-a/lc3][like LC-3]]), and running some basic programs in
-           simulation.[fn:4] Synthesize your core to an FPGA, and run
-           a similar set of program there.
-         - Continuing --- pipeline your processor, implement a memory system,
-           (caches!). Make your cache more efficient (is it
-           write-back? pipelined? lockup-free?). Add branch
-           prediction. Add prefetching. Make it out-of-order. Is it
-           superscalar? Instantiate multiple cores and solve coherence
-           problems using snooping/directories. Add an MMU and TLBs. Try
-           booting a real OS on your core ([[https://en.wikipedia.org/wiki/Xv6][xv6]], Linux, etc.).
-           Implement a paper.
-         We know --- projects are hard and need resources that aren't
-         always available. This is where SIGARCH's workshops come in: we
-         provide hardware (FPGAs) and guidance, and you get to
-         implement something cool over a couple of days!
-
-5. Blah2?
-
-   Blah2.
+      *Projects/Implementation:* Resources here are a bit more scarce:
+      - An excellent route is to learn some Verilog. Try [[https://hdlbits.01xz.net/wiki/Main_Page][HDLBits]]
+        while starting out. Unfortunately, the really hard part of
+        RTL design is verification, which isn't well-covered.
+      - Once you know Verilog, try implementing a basic processor
+        ([[https://github.com/nebhrajani-a/lc3][like LC-3]]), and running some basic programs in
+        simulation.[fn:4] Synthesize your core to an FPGA, and run
+        a similar set of program there.
+      - Continuing --- pipeline your processor, implement a memory system,
+        (caches!). Make your cache more efficient (is it
+        write-back? pipelined? lockup-free?). Add branch
+        prediction. Add prefetching. Make it out-of-order. Is it
+        superscalar? Instantiate multiple cores and solve coherence
+        problems using snooping/directories. Add an MMU and TLBs. Try
+        booting a real OS on your core ([[https://en.wikipedia.org/wiki/Xv6][xv6]], Linux, etc.).
+        Implement a paper.
+      We know --- projects are hard and need resources that aren't
+      always available. This is where SIGARCH's workshops come in: we
+      provide hardware and guidance, and you get to
+      implement something cool over a couple of days!
 
 
 * Footnotes

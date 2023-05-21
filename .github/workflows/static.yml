@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
+          # Use public as the root for GH pages.
           path: './public'
       - name: Deploy to GitHub Pages
         id: deployment

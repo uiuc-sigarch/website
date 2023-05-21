@@ -1,6 +1,1 @@
-* SIGARCH@UIUC Website Source
-
-
-** TODO
-- [ ] Add GitHub Actions build and publish CI/CD.
-- [ ] Get domain name, add to CNAME.
+* SIGARCH @ UIUC Website Source

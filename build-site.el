@@ -30,6 +30,9 @@
   (package-refresh-contents))
 
 ;; Install dependencies
+
+;; Installing org is a little tricky -- we first need to get rid of the version
+;; that comes with Emacs. We do this to get a newer version of org than built-in.
 (assq-delete-all 'org package--builtins)
 (assq-delete-all 'org package--builtin-versions)
 (package-install 'org)
@@ -58,6 +61,7 @@
              :with-toc nil
              :section-numbers nil
              :time-stamp-file nil)
+       ;; Images, favicon, etc.
        (list "org-static"
              :base-directory "./content"
              :base-extension "png\\|jpg\\|gif\\|pdf\\|svg\\|ico\\|xml\\|webmanifest"
