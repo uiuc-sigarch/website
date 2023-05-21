@@ -30,12 +30,13 @@
   (package-refresh-contents))
 
 ;; Install dependencies
+(assq-delete-all 'org package--builtins)
+(assq-delete-all 'org package--builtin-versions)
 (package-install 'org)
 (package-install 'htmlize)
 
 ;; Load the publishing system
 (require 'ox-publish)
-(require 'ox-html)
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil)            ;; Don't show validation link
