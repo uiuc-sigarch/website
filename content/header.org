@@ -1,4 +1,4 @@
-#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+# #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1.0">
 #+HTML_HEAD: <link rel="stylesheet" href="fonts/Serif/cmun-serif.css"></link>
 #+HTML_HEAD: <style>body {
 #+HTML_HEAD: font-family: "Computer Modern Serif";
