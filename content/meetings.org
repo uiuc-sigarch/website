@@ -8,3 +8,4 @@
 * Paper Discussion
 1. Optimized Encryption for Flexible Processors =[slides]= =[paper]=
 2. CoLT =[slides]= =[paper]=
+3. TEMP [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/CoLT.pdf][=[slides]=]]
