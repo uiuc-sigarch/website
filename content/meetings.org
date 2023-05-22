@@ -4,7 +4,7 @@
 * Synthesis Meetings
 1. The SmartNIC [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/smart-nic.pdf][=[slides]=]]
 2. Cluster Computing =[slides]=
-3. Out of Order Execution =[slides]=
+3. Out of Order Execution [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/ooo_execution.pdf][=[slides]=]]
 4. CPU vs. GPU [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/cpu_vs_gpu.pdf][=[slides]=]]
 5. Intro to Pipelining [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/intro_to_pipelining.pdf][=[slides]=]]
 6. Building the LC3 Microprocessor [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/lc3_introducion.pdf][=[slides]=]]
