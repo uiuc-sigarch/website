@@ -1,7 +1,8 @@
 #+title: Meetings
 #+include: header.org
 
-* Synthesis Meetings
+* Spring 2023
+** Synthesis Meetings
 1. The SmartNIC [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/smart-nic.pdf][=[slides]=]]
 2. Cluster Computing =[slides]=
 3. Out of Order Execution [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/ooo_execution.pdf][=[slides]=]]
@@ -11,7 +12,7 @@
 7. The Memory Hierarchy =[slides]=
 8. Intro Meeting [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/intro_meeting.pdf][=[slides]=]]
 
-* Paper Discussion
+** Paper Discussion
 1. Optimized Encryption for Flexible Processors [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/flex_encrypt.pdf][=[slides]=]] [[http://passat.crhc.illinois.edu/date23.pdf][=[paper]=]]
 2. CoLT [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/CoLT.pdf][=[slides]=]] [[https://ieeexplore.ieee.org/document/6493625][=[paper]=]]
 3. Solving Systems of Equations in a Single Step [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/analog_matrix_computations.pdf][=[slides]=]] [[https://www.pnas.org/doi/10.1073/pnas.1815682116][=[paper]=]]
