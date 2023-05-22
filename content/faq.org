@@ -4,11 +4,13 @@
 1. *What is computer architecture?*
 
    Computer architecture is the study of how computer systems are
-   built. @noelle TODO.
+   designed, built, and organized.
+   It defines the operation of a computer, and provides the interface for interaction with the system and other devices.
 
 2. *Why is it important?*
 
-   @noelle TODO.
+   Computers must constantly get faster to keep up with increasingly demanding workloads. While speedup is achievable at the software level via various optimization techniques, any such improvement will be too specific to benefit more than a trivial percentage of tasks. Improving the performance of the CPU itself, however, can provide a universal speedup that benefits all (or at least most) applications.
+   In past years, we have relied on Moore's law for this improvement, since the growing number of transistors on a single chip means more computing power can fit into a single device. Unfortunately, we are fast approaching the theoretical limit of transistor size and can no longer rely on simply adding compute power. Instead, we must rethink the design of computers  to better utilize the resources we have available.
 
 3. *I'm interested in computer architecture, where should I start learning?*
 
@@ -21,13 +23,13 @@
       | Class                      | Content                                                                                                                                                           | Comments                                                                                                                                                 |
       |----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
       | ECE 120                    | Digital logic, basic computer organization, assembly programming. Uses LC-3.                                                                                      | As a first course in computer architecture, covers extremely important fundamental concepts (critical paths, logic minimization, FSMs).                  |
-      | CS 233                     | Basic Verilog[fn:1], basic computer organization, assembly programming and optimization. Uses MIPS.                                                               | Lots of MIPS programming and learning how C compiles down. The honors section lets you build a project with FPGAs[fn:2] at the end.                            |
+      | CS 233                     | Basic Verilog[fn:1], basic computer organization, assembly programming and optimization. Uses MIPS.                                                               | Lots of MIPS programming and learning how C compiles down. The honors section lets you build a project with FPGAs[fn:2] at the end.                      |
       |----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
       | {{{color(gray, ECE 220)}}} | {{{color(gray, Interrupts and privilege. Mostly a programming class outside the first two weeks.)}}}                                                              | {{{color(gray, Not really an architecture class outside what's mentioned. Though C is useful to know.)}}}                                                |
-      | {{{color(gray, ECE 385)}}} | {{{color(gray, SystemVerilog and FPGA class. One lab implements a subset of LC-3 on an FPGA.)}}}                                                                  | {{{color(gray, Class is being reworked as of SU23 to use Xilinx. Does not cover SystemVerilog in enough detail to do modern RTL design/verification.)}}} |
+      | {{{color(gray, ECE 385)}}} | {{{color(gray, SystemVerilog and FPGA class. One lab implements a subset of LC-3 on an FPGA.)}}}                                                                  | {{{color(gray, Class is being reworked as of SP23 to use Xilinx. Does not cover SystemVerilog in enough detail to do modern RTL design/verification.)}}} |
       |----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
       | CS 433                     | Performance evaluation, ILP, caches, parallelism, multi-core. Some advanced topics on pipeline and cache optimization.                                            | No MPs, the class is homework and exam based. There are projects and presentations for both the undergraduate and graduate sections.                     |
-      | ECE 411                    | Modern computer architecture: performance evaluation, caches, pipelining, memory systems, types of I/O, parallel processing, some advanced concepts. Uses RISC-V. | Requires ECE 391[fn:3] (and you'll need to know SystemVerilog for the MPs). The final project is an excellent opportunity to build something ambitious.        |
+      | ECE 411                    | Modern computer architecture: performance evaluation, caches, pipelining, memory systems, types of I/O, parallel processing, some advanced concepts. Uses RISC-V. | Requires ECE 391[fn:3] (and you'll need to know SystemVerilog for the MPs). The final project is an excellent opportunity to build something ambitious.  |
 
       Outside these, there various graduate courses offered each
       semester.
