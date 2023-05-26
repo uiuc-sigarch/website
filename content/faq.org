@@ -4,15 +4,31 @@
 1. *What is computer architecture?*
 
    Computer architecture is the study of how computer systems are
-   designed, built, and organized.
-   It defines the operation of a computer, and provides the interface for interaction with the system and other devices.
+   designed, built, and organized.[fn:1]
 
 2. *Why is it important?*
 
-   Computers must constantly get faster to keep up with increasingly demanding workloads. While speedup is achievable at the software level via various optimization techniques, any such improvement will be too specific to benefit more than a trivial percentage of tasks. Improving the performance of the CPU itself, however, can provide a universal speedup that benefits all (or at least most) applications.
-   In past years, we have relied on Moore's law for this improvement, since the growing number of transistors on a single chip means more computing power can fit into a single device. Unfortunately, we are fast approaching the theoretical limit of transistor size and can no longer rely on simply adding compute power. Instead, we must rethink the design of computers  to better utilize the resources we have available.
+   Faster, smaller, more power-efficient, and more domain-specific
+   computing is a necessity in almost every field. Consider: mobile
+   phones, wearable electronics, architectures for ML, scientific
+   computing, low-latency networking, or simply running a web browser
+   --- all these are cases where building progressively "better"
+   computer systems is critical.
 
-3. *I'm interested in computer architecture, where should I start learning?*
+3. *Why is it interesting?*
+
+   It's a complete answer to the question: "What's really inside
+   your computer, and how does it work?"[fn:2]
+
+4. *What are the current challenges in computer architecture?*
+
+   In past years, the industry relied on Moore's law for improvement in
+   computer speeds.[fn:3] Unfortunately, we're fast approaching
+   the theoretical limit of transistor size, meaning we must rethink
+   the architecture of computers to better utilize the resources we have
+   available.
+
+5. *I'm interested in computer architecture, where should I start learning?*
 
    A great place to start is coming to [[./meetings.org][SIGARCH meetings]]! Outside SIGARCH,
    there are various routes you can take.
@@ -23,13 +39,13 @@
       | Class                      | Content                                                                                                                                                           | Comments                                                                                                                                                 |
       |----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
       | ECE 120                    | Digital logic, basic computer organization, assembly programming. Uses LC-3.                                                                                      | As a first course in computer architecture, covers extremely important fundamental concepts (critical paths, logic minimization, FSMs).                  |
-      | CS 233                     | Basic Verilog[fn:1], basic computer organization, assembly programming and optimization. Uses MIPS.                                                               | Lots of MIPS programming and learning how C compiles down. The honors section lets you build a project with FPGAs[fn:2] at the end.                      |
+      | CS 233                     | Basic Verilog[fn:4], basic computer organization, assembly programming and optimization. Uses MIPS.                                                               | Lots of MIPS programming and learning how C compiles down. The honors section lets you build a project with FPGAs[fn:5] at the end.                      |
       |----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
       | {{{color(gray, ECE 220)}}} | {{{color(gray, Interrupts and privilege. Mostly a programming class outside the first two weeks.)}}}                                                              | {{{color(gray, Not really an architecture class outside what's mentioned. Though C is useful to know.)}}}                                                |
       | {{{color(gray, ECE 385)}}} | {{{color(gray, SystemVerilog and FPGA class. One lab implements a subset of LC-3 on an FPGA.)}}}                                                                  | {{{color(gray, Class is being reworked as of SP23 to use Xilinx. Does not cover SystemVerilog in enough detail to do modern RTL design/verification.)}}} |
       |----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
       | CS 433                     | Performance evaluation, ILP, caches, parallelism, multi-core. Some advanced topics on pipeline and cache optimization.                                            | No MPs, the class is homework and exam based. There are projects and presentations for both the undergraduate and graduate sections.                     |
-      | ECE 411                    | Modern computer architecture: performance evaluation, caches, pipelining, memory systems, types of I/O, parallel processing, some advanced concepts. Uses RISC-V. | Requires ECE 391[fn:3] (and you'll need to know SystemVerilog for the MPs). The final project is an excellent opportunity to build something ambitious.  |
+      | ECE 411                    | Modern computer architecture: performance evaluation, caches, pipelining, memory systems, types of I/O, parallel processing, some advanced concepts. Uses RISC-V. | Requires ECE 391[fn:6] (and you'll need to know SystemVerilog for the MPs). The final project is an excellent opportunity to build something ambitious.  |
 
       Outside these, there various graduate courses offered each
       semester.
@@ -63,7 +79,7 @@
         RTL design is verification, which isn't well-covered.
       - Once you know Verilog, try implementing a basic processor
         ([[https://github.com/nebhrajani-a/lc3][like LC-3]]), and running some basic programs in
-        simulation.[fn:4] Synthesize your core to an FPGA, and run
+        simulation.[fn:7] Synthesize your core to an FPGA, and run
         a similar set of programs there.
       - Continuing --- pipeline your processor, implement a memory system,
         (caches!). Make your cache more efficient (is it
@@ -78,20 +94,27 @@
       provide hardware and guidance, and you get to
       implement something cool over a couple of days!
 
-
 * Footnotes
 
-[fn:1] (System)Verilog is a hardware description language (HDL) --- a specialized computer language used to model and implement
+[fn:1] In contrast with computer /science/, which
+focuses on using computers to perform useful tasks.
+
+[fn:2] Also, "can you make it better?"
+
+[fn:3] The growing number of transistors on a single chip meant more
+computing power could fit into a single device.
+
+[fn:4] (System)Verilog is a hardware description language (HDL) --- a specialized computer language used to model and implement
 electronic circuits.
 
-[fn:2] An FPGA (field-programmable gate array) is a chip that can be
+[fn:5] An FPGA (field-programmable gate array) is a chip that can be
 reprogrammed by software to behave like any digital circuit, specified
 using an HDL.
 
-[fn:3] ECE 391 is a systems (not architecture) class. The
+[fn:6] ECE 391 is a systems (not architecture) class. The
 prerequisite exists since 411 uses concepts such as virtual memory and
 TLBs that are covered in 391.
 
-[fn:4] If you're more CS-oriented, writing a Python assembler or
+[fn:7] If you're more CS-oriented, writing a Python assembler or
 emulator is a fun extension of this project. Advanced: [[https://llvm.org/docs/WritingAnLLVMBackend.html][write an LLVM
 backend]] for your architecture so that you can run C on it!
