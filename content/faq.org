@@ -47,7 +47,7 @@
       | CS 433                     | Performance evaluation, ILP, caches, parallelism, multi-core. Some advanced topics on pipeline and cache optimization.                                            | No MPs, the class is homework and exam based. There are projects and presentations for both the undergraduate and graduate sections.                     |
       | ECE 411                    | Modern computer architecture: performance evaluation, caches, pipelining, memory systems, types of I/O, parallel processing, some advanced concepts. Uses RISC-V. | Requires ECE 391[fn:6] (and you'll need to know SystemVerilog for the MPs). The final project is an excellent opportunity to build something ambitious.  |
 
-      Outside these, there various graduate courses offered each
+      Outside these, there are various graduate courses offered each
       semester.
 
    2. *Self-study:* There are two parallel tracks to follow: learning
