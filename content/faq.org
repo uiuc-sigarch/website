@@ -82,14 +82,14 @@
         simulation.[fn:7] Synthesize your core to an FPGA, and run
         a similar set of programs there.
       - Continuing --- pipeline your processor, implement a memory system,
-        (caches!). Make your cache more efficient (is it
+        (caches). Make your cache more efficient (is it
         write-back? pipelined? lockup-free?). Add branch
         prediction. Add prefetching. Make it out-of-order. Is it
         superscalar? Instantiate multiple cores and solve coherence
         problems using snooping/directories. Add an MMU and TLBs. Try
         booting a real OS on your core ([[https://en.wikipedia.org/wiki/Xv6][xv6]], Linux, etc.).
         Implement a paper.
-      We know --- projects are hard and need resources that aren't
+      We know, projects are hard and need resources that aren't
       always available. This is where SIGARCH's workshops come in: we
       provide hardware and guidance, and you get to
       implement something cool over a couple of days!
@@ -117,4 +117,4 @@ TLBs that are covered in 391.
 
 [fn:7] If you're more CS-oriented, writing a Python assembler or
 emulator is a fun extension of this project. Advanced: [[https://llvm.org/docs/WritingAnLLVMBackend.html][write an LLVM
-backend]] for your architecture so that you can run C on it!
+backend]] for your architecture so that you can run C on it.
