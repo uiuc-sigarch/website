@@ -1,5 +1,6 @@
 #+title: Meetings
 #+include: header.org
+Meetings are in reverse chronological order.
 
 * Spring 2023
 ** Synthesis Meetings
@@ -10,7 +11,7 @@
 5. Intro to Pipelining [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/intro_to_pipelining.pdf][=[slides]=]]
 6. Building the LC3 Microprocessor [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/lc3_introducion.pdf][=[slides]=]]
 7. The Memory Hierarchy =[slides]=
-8. Intro Meeting [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/synthesis/intro_meeting.pdf][=[slides]=]]
+8. Intro Meeting =[slides]=
 
 ** Paper Discussion
 1. Optimized Encryption for Flexible Processors [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/flex_encrypt.pdf][=[slides]=]] [[http://passat.crhc.illinois.edu/date23.pdf][=[paper]=]]
@@ -19,7 +20,7 @@
 4. Elastic Cuckoo Page Tables [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/ecpt.pdf][=[slides]=]] [[https://iacoma.cs.uiuc.edu/iacoma-papers/asplos20.pdf][=[paper]=]]
 5. Pipeline Gateing [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/pipeline_gating.pdf][=[slides]=]] [[https://ieeexplore.ieee.org/document/694769][=[paper]=]]
 6. TensorDimm [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/tensor_dimm.pdf][=[slides]=]] [[https://dl.acm.org/doi/10.1145/3352460.3358284][=[paper]=]]
-7. Tailored Page Sizes =[slides]= =[paper]=
+7. Tailored Page Sizes [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/tailored_page_sizes.pdf][=[slides]=]] [[https://ieeexplore.ieee.org/document/9138990][=[paper]=]]
 8. PointAcc [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/point-acc.pdf][=[slides]=]] [[https://pointacc.mit.edu/][=[paper]=]]
 9. Transactional Memory [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/transactional_memory.pdf][=[slides]=]] [[https://dl.acm.org/doi/abs/10.1145/165123.165164][=[paper]=]]
 10. Row Hammer =[slides]= [[https://users.ece.cmu.edu/~yoonguk/papers/kim-isca14.pdf][=[paper]=]]
