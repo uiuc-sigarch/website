@@ -18,7 +18,7 @@ Meetings are in reverse chronological order.
 2. CoLT [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/CoLT.pdf][=[slides]=]] [[https://ieeexplore.ieee.org/document/6493625][=[paper]=]]
 3. Solving Systems of Equations in a Single Step [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/analog_matrix_computations.pdf][=[slides]=]] [[https://www.pnas.org/doi/10.1073/pnas.1815682116][=[paper]=]]
 4. Elastic Cuckoo Page Tables [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/ecpt.pdf][=[slides]=]] [[https://iacoma.cs.uiuc.edu/iacoma-papers/asplos20.pdf][=[paper]=]]
-5. Pipeline Gateing [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/pipeline_gating.pdf][=[slides]=]] [[https://ieeexplore.ieee.org/document/694769][=[paper]=]]
+5. Pipeline Gating [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/pipeline_gating.pdf][=[slides]=]] [[https://ieeexplore.ieee.org/document/694769][=[paper]=]]
 6. TensorDimm [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/tensor_dimm.pdf][=[slides]=]] [[https://dl.acm.org/doi/10.1145/3352460.3358284][=[paper]=]]
 7. Tailored Page Sizes [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/tailored_page_sizes.pdf][=[slides]=]] [[https://ieeexplore.ieee.org/document/9138990][=[paper]=]]
 8. PointAcc [[https://github.com/uiuc-sigarch/meetings/blob/main/spring23/paper_review/point-acc.pdf][=[slides]=]] [[https://pointacc.mit.edu/][=[paper]=]]
