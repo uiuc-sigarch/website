@@ -7,7 +7,7 @@ We are the University of Illinois Urbana-Champaign's student-run
 computer architecture interest group.
 
 * Meetings
-We host weekly meetings *Tuesdays* from *5:30-6:30pm* in *ECEB 3020*.
+We host weekly meetings *Thursdays* from *5:00-6:00pm* in *ECEB 3013*.
 These meetings use a split format, with the first half devoted to the
 high level summary of a relevant topic, and the second half devoted to
 the discussion of a paper. We're always looking for people interested
@@ -15,7 +15,7 @@ in running meetings, so if you have an idea, reach out!
 For an archive of past meetings, see [[./meetings.org][here]].
 
 * Workshops
-New for *Fall 2023*, we will be hosting semi-regular weekend workshops
+Since *Fall 2023*, we have been hosting semi-regular weekend workshops
 directed at giving members hands on exposure to projects in computer
 architecture and chip design.
 For an archive of past workshops, see [[./workshops.org][here]].
@@ -30,8 +30,8 @@ classes are [[./faq.org][here]].
 
 * Sponsors
 SIGARCH is looking for sponsorship! If you're interested in sponsoring
-us, please email one of ={noellec3, avn5}@illinois.edu=.
+us, please email one of ={noellec3, avn5, pradyun2}@illinois.edu=.
 
 * Contact
-To get in touch with an officer, either message =craw.fish= or
-=nebhrajani= on Discord, or email us at one of ={noellec3, avn5}@illinois.edu=.
+To get in touch with an officer, either message =craw.fish=,
+=nebhrajani=, or =pradyun= on Discord, or email us at one of ={noellec3, avn5, pradyun2}@illinois.edu=.
