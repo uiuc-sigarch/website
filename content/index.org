@@ -30,8 +30,7 @@ classes are [[./faq.org][here]].
 
 * Sponsors
 SIGARCH is looking for sponsorship! If you're interested in sponsoring
-us, please email one of ={noellec3, avn5, pradyun2}@illinois.edu=.
+us, please email one of ={pradyun2, maiorov2}@illinois.edu=.
 
 * Contact
-To get in touch with an officer, either message =craw.fish=,
-=nebhrajani=, or =pradyun= on Discord, or email us at one of ={noellec3, avn5, pradyun2}@illinois.edu=.
+To get in touch, either message =pradyun= or =mangrovetree0= on Discord, or email one of  ={pradyun2, maiorov2}@illinois.edu=.
