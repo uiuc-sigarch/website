@@ -20,32 +20,37 @@
 ;;; Code:
 
 (require 'package)
-(setq package-user-dir (expand-file-name "./.packages"))
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+			                   ("org" . "https://orgmode.org/elpa/")
+			                   ("elpa" . "https://elpa.gnu.org/packages/")))
 
 ;; Initialize the package system
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
 
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ;; Install dependencies
 
 ;; Installing org is a little tricky -- we first need to get rid of the version
 ;; that comes with Emacs. We do this to get a newer version of org than built-in.
-(assq-delete-all 'org package--builtins)
-(assq-delete-all 'org package--builtin-versions)
-(package-install 'org)
-(package-install 'htmlize)
+
+(use-package org :pin org)
+(use-package htmlize)
 
 ;; Load the publishing system
-(require 'ox-publish)
+(use-package ox-publish)
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil)            ;; Don't show validation link
-      ; org-html-head-include-scripts nil)       ;; Use our own scripts
-      ; org-html-head-include-default-style nil ;; Use our own styles
-      ;org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+                                        ; org-html-head-include-scripts nil)       ;; Use our own scripts
+                                        ; org-html-head-include-default-style nil ;; Use our own styles
+                                        ;org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
 
 ;; Define the publishing project
 (setq org-publish-project-alist
