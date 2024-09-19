@@ -20,17 +20,14 @@
 ;;; Code:
 
 (require 'package)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			                   ("org" . "https://orgmode.org/elpa/")
+(setq package-archives '(("org" . "https://orgmode.org/elpa/")
 			                   ("elpa" . "https://elpa.gnu.org/packages/")))
 
 ;; Initialize the package system
+(setq package-check-signature nil)
 (package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+(package-refresh-contents)
+(package-install 'use-package)
 
 (require 'use-package)
 (setq use-package-always-ensure t)
@@ -41,10 +38,6 @@
 ;; that comes with Emacs. We do this to get a newer version of org than built-in.
 
 (use-package org :pin org)
-(use-package htmlize)
-
-;; Load the publishing system
-(use-package ox-publish)
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil)            ;; Don't show validation link

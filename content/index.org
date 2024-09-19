@@ -1,5 +1,9 @@
 #+title: SIGARCH @ UIUC
 #+include: header.org
+#+author:
+#+date:
+#+options: toc:nil
+
 #+ATTR_HTML: :width 300px
 [[./resources/sigarch.svg]]
 
