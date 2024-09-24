@@ -4,7 +4,14 @@
 #+date:
 #+options: toc:nil
 
-#+ATTR_HTML: :width 300px
+#+begin_export html
+<style>
+.org-svg {
+  width: 300px;
+}
+</style>
+#+end_export
+
 [[./resources/sigarch.svg]]
 
 We are the University of Illinois Urbana-Champaign's student-run
