@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGARCH @ UIUC</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #fafafa;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(135deg, #ff6600, #0055ff);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    }
+
+    .toggle-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 20px;
+      padding: 0.3rem 0.7rem;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(135deg, #ff6600, #0055ff);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background: linear-gradient(135deg, #ff6600, #0055ff);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+      color: #222;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    a {
+      color: #0055ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f1f1f1;
+      font-size: 0.9rem;
+      color: #555;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #000;
+      transition: color 0.3s;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode h2 {
+      color: #fff;
+      border-color: #444;
+    }
+
+    body.dark-mode a {
+      color: #66aaff;
+    }
+
+    body.dark-mode .highlight {
+      color: #fff;
+    }
+
+    body.dark-mode footer {
+      background: #1e1e1e;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-logo"><img src="assets/logo-small.png" alt="SIGARCH logo"> SIGARCH@UIUC</div>
+    <div class="nav-links" id="navLinks">
+      <a href="https://github.com/uiuc-sigarch/meetings">Meetings</a>
+      <a href="workshops.html">Workshops</a>
+      <a href="https://discord.gg/Cf4FMZVUBR" target="_blank">Discord</a>
+      <a href="faq.html">FAQ</a>
+      <button class="toggle-btn" id="themeToggle">🌙</button>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Welcome to SIGARCH</h1>
+    <p>University of Illinois Urbana-Champaign's student-run computer architecture interest group</p>
+  </header>
+
+  <main>
+    <section id="meetings">
+      <h2>Meetings</h2>
+      <p>We host weekly meetings <span class="highlight">Thursdays from 5:00-6:00pm in ECEB 3013</span>. These meetings use a split format, with the first half devoted to the high-level summary of a relevant topic, and the second half devoted to the discussion of a paper. For an archive of past meetings, see <a href="https://github.com/uiuc-sigarch/meetings">here</a>.</p>
+    </section>
+
+    <section id="workshops">
+      <h2>Workshops</h2>
+      <p>Since <span class="highlight">Fall 2023</span>, we have been hosting semi-regular weekend workshops directed at giving members hands-on exposure to projects in computer architecture and chip design. For an archive of past workshops, see <a href="#">here</a>.</p>
+    </section>
+
+    <section>
+      <h2>Join Us</h2>
+      <p>If you're interested in being a part of SIGARCH, join our <a href="https://discord.gg/Cf4FMZVUBR">Discord</a> to stay in the loop.</p>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <p>FAQs about computer architecture, SIGARCH, and UIUC classes are <a href="#">here</a>.</p>
+    </section>
+
+    <section>
+      <h2>Sponsors</h2>
+      <p>SIGARCH is looking for sponsorship! If you're interested in sponsoring us, please email <a href="mailto:pratyay2@illinois.edu">pratyay2@illinois.edu</a> or <a href="mailto:alexg5@illinois.edu">alexg5@illinois.edu</a>.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>To get in touch, message <strong>.poiku</strong> or <strong>firedarkness39</strong> on Discord, or email <a href="mailto:pratyay2@illinois.edu">pratyay2@illinois.edu</a> / <a href="mailto:alexg5@illinois.edu">alexg5@illinois.edu</a>.</p>
+    </section>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    // Load saved theme preference
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    // Mobile hamburger toggle
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>

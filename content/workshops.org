@@ -1,3 +1,0 @@
-#+title: Workshops
-#+include: header.org
-1. Coming soon...

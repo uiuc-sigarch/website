@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frequently Asked Questions</title>
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --card: #0f1117;
+      --text: #e6e6e6;
+      --muted: #9aa0a6;
+      --link: #8ab4f8;
+      --accent: #3ddc97;
+      --border: #1c2030;
+    }
+    body.light {
+      --bg: #fdfdfd;
+      --card: #ffffff;
+      --text: #202124;
+      --muted: #5f6368;
+      --link: #1a73e8;
+      --accent: #00796b;
+      --border: #e0e0e0;
+    }
+
+    html, body { background: var(--bg); color: var(--text); margin: 0; font: 16px/1.6 system-ui, sans-serif; transition: background 0.3s, color 0.3s; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+
+    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+    header h1 { font-size: clamp(1.8rem, 2.4vw + 1rem, 2.6rem); margin: 0; letter-spacing: -0.02em; }
+    header .subtitle { color: var(--muted); font-size: 0.95rem; }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+      transition: background 0.3s, border 0.3s;
+    }
+
+    ol.faq { counter-reset: item; list-style: none; padding: 0; margin: 0; }
+    .faq > li { margin: 1rem 0 1.25rem; }
+    .q { font-weight: 700; display: inline-block; margin-bottom: 0.35rem; }
+    .q::before { counter-increment: item; content: counter(item) ". "; color: var(--accent); font-weight: 700; }
+    .answer p { margin: 0.35rem 0 0.5rem; }
+    .muted { color: var(--muted); }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    thead th { text-align: left; font-weight: 700; padding: 0.75rem 0.9rem; background: rgba(0,0,0,0.05); border-bottom: 1px solid var(--border); }
+    tbody td { padding: 0.7rem 0.9rem; vertical-align: top; border-bottom: 1px solid var(--border); }
+    tbody tr:hover td { background: rgba(0,0,0,0.03); }
+
+    .note { font-size: 0.95rem; color: var(--muted); }
+
+    .footnotes { margin-top: 2rem; border-top: 1px dashed var(--border); padding-top: 1rem; }
+    .footnotes ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+    .footnotes li { margin: 0.4rem 0; }
+    .fn-ref { text-decoration: none; font-size: 0.85em; vertical-align: super; }
+    .backref { margin-left: 0.5rem; text-decoration: none; }
+
+    button.toggle, a.home-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      margin-left: 0.5rem;
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, border 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    button.toggle:hover, a.home-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Frequently Asked Questions</h1>
+        <div class="subtitle">Computer Architecture @ SIGARCH (UIUC)</div>
+      </div>
+      <div>
+        <a href="index.html" class="home-btn"><img src="assets/logo-small.png" alt="SIGARCH logo"></a>
+        <button class="toggle" id="modeToggle">🌙</button>
+      </div>
+    </header>
+
+    <main class="card">
+      <ol class="faq">
+        <li id="q1">
+          <span class="q">What is computer architecture?<a class="fn-ref" href="#fn1" id="fnref1">[1]</a></span>
+          <div class="answer">
+            <p>Computer architecture is the study of how computer systems are designed, built, and organized.</p>
+          </div>
+        </li>
+
+        <li id="q2">
+          <span class="q">Why is it important?</span>
+          <div class="answer">
+            <p>Faster, smaller, more power-efficient, and more domain-specific computing is a necessity in almost every field. Consider: mobile phones, wearable electronics, architectures for ML, scientific computing, low-latency networking, or simply running a web browser — all these are cases where building progressively “better” computer systems is critical.</p>
+          </div>
+        </li>
+
+        <li id="q3">
+          <span class="q">Why is it interesting?<a class="fn-ref" href="#fn2" id="fnref2">[2]</a></span>
+          <div class="answer">
+            <p>It’s a complete answer to the question: “What’s really inside your computer, and how does it work?”</p>
+          </div>
+        </li>
+
+        <li id="q4">
+          <span class="q">What are the current challenges in computer architecture?<a class="fn-ref" href="#fn3" id="fnref3">[3]</a></span>
+          <div class="answer">
+            <p>In past years, the industry relied on Moore’s law for improvement in computer speeds. Unfortunately, we’re fast approaching the theoretical limit of transistor size, meaning we must rethink the architecture of computers to better utilize the resources we have available.</p>
+          </div>
+        </li>
+
+        <li id="q5">
+          <span class="q">I’m interested in computer architecture, where should I start learning?</span>
+          <div class="answer">
+            <p>A great place to start is coming to <a href="./meetings.org">SIGARCH meetings</a>! Outside SIGARCH, there are various routes you can take.</p>
+
+            <h3>1) Classes</h3>
+            <p class="note">The ECE and CS departments at UIUC both offer classes in computer architecture and related topics:</p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Class</th><th>Content</th><th>Comments</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>ECE 120</td><td>Digital logic, basic computer organization, assembly programming. Uses LC-3.</td><td>As a first course in computer architecture, covers extremely important fundamental concepts (critical paths, logic minimization, FSMs).</td></tr>
+                  <tr><td>CS 233</td><td>Basic Verilog<a class="fn-ref" href="#fn4" id="fnref4">[4]</a>, basic computer organization, assembly programming and optimization. Uses MIPS.</td><td>Lots of MIPS programming and learning how C compiles down. The honors section lets you build a project with FPGAs<a class="fn-ref" href="#fn5" id="fnref5">[5]</a> at the end.</td></tr>
+                  <tr><td class="muted">ECE 220</td><td class="muted">Interrupts and privilege. Mostly a programming class outside the first two weeks.</td><td class="muted">Not really an architecture class outside what’s mentioned. Though C is useful to know.</td></tr>
+                  <tr><td class="muted">ECE 385</td><td class="muted">SystemVerilog and FPGA class. One lab implements a subset of LC-3 on an FPGA.</td><td class="muted">Class is being reworked as of SP23 to use Xilinx. Does not cover SystemVerilog in enough detail to do modern RTL design/verification.</td></tr>
+                  <tr><td>CS 433</td><td>Performance evaluation, ILP, caches, parallelism, multi-core. Some advanced topics on pipeline and cache optimization.</td><td>No MPs, the class is homework and exam based. There are projects and presentations for both the undergraduate and graduate sections.</td></tr>
+                  <tr><td>ECE 411</td><td>Modern computer architecture: performance evaluation, caches, pipelining, memory systems, types of I/O, parallel processing, some advanced concepts. Uses RISC-V.</td><td>Requires ECE 391<a class="fn-ref" href="#fn6" id="fnref6">[6]</a>. The final project is an excellent opportunity to build something ambitious.</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>2) Self-study</h3>
+            <p>There are two parallel tracks: learning theory and writing implementations.</p>
+
+            <h4>Theory — book recommendations</h4>
+            <ul>
+              <li>Patt &amp; Patel: <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99908131312205899">Introduction to Computing Systems</a></li>
+              <li>Bryant &amp; O’Hallaron: <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99454154312205899">Computer Systems: A Programmer’s Perspective</a> (<a href="http://csapp.cs.cmu.edu/2e/perspective.html">philosophy</a>)</li>
+              <li>Patterson &amp; Hennessy: <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99362146912205899">Computer Organization and Design</a> (RISC-V edition)</li>
+              <li>Hennessy &amp; Patterson: <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99847468812205899">Computer Architecture: A Quantitative Approach</a></li>
+              <li><a href="https://dblp.org/db/series/synthesis/cac.html">Synthesis Lectures on Computer Architecture</a></li>
+            </ul>
+
+            <h4>Projects / Implementation</h4>
+            <ul>
+              <li>Learn Verilog — <a href="https://hdlbits.01xz.net/wiki/Main_Page">HDLBits</a></li>
+              <li>Implement a processor (<a href="https://github.com/nebhrajani-a/lc3">LC-3</a>) and run programs in simulation<a class="fn-ref" href="#fn7" id="fnref7">[7]</a></li>
+              <li>Pipeline it, add caches, branch prediction, prefetching, OOO, superscalar, multi-core, coherence, MMU/TLBs. Try booting <a href="https://en.wikipedia.org/wiki/Xv6">xv6</a> or Linux.</li>
+            </ul>
+            <p>SIGARCH workshops provide hardware &amp; guidance for projects.</p>
+          </div>
+        </li>
+      </ol>
+    </main>
+
+    <section class="footnotes card" id="footnotes">
+      <h3>Footnotes</h3>
+      <ol>
+        <li id="fn1">In contrast with computer <em>science</em>, which focuses on using computers to perform useful tasks. <a class="backref" href="#fnref1">↩</a></li>
+        <li id="fn2">Also, “can you make it better?” <a class="backref" href="#fnref2">↩</a></li>
+        <li id="fn3">The growing number of transistors on a single chip meant more computing power could fit into a single device. <a class="backref" href="#fnref3">↩</a></li>
+        <li id="fn4">(System)Verilog is a hardware description language (HDL). <a class="backref" href="#fnref4">↩</a></li>
+        <li id="fn5">An FPGA (field-programmable gate array) is a reprogrammable chip. <a class="backref" href="#fnref5">↩</a></li>
+        <li id="fn6">ECE 391 is a systems class. Covers virtual memory &amp; TLBs. <a class="backref" href="#fnref6">↩</a></li>
+        <li id="fn7">Fun extension: write a Python assembler/emulator, or an <a href="https://llvm.org/docs/WritingAnLLVMBackend.html">LLVM backend</a>. <a class="backref" href="#fnref7">↩</a></li>
+      </ol>
+    </section>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("modeToggle");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedMode = localStorage.getItem("theme");
+    if (savedMode === "light" || (!savedMode && !prefersDark)) {
+      document.body.classList.add("light");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      const isLight = document.body.classList.contains("light");
+      toggleBtn.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>
