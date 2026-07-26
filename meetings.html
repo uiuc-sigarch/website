@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="assets/tab.png">
   <link rel="stylesheet" href="style.css">
   <script src="site.js" defer></script>
-  <title>Workshops | SIGARCH @ UIUC</title>
+  <title>Meetings | SIGARCH @ UIUC</title>
 </head>
 <body>
   <nav class="site-nav" aria-label="Main navigation">
@@ -17,8 +17,8 @@
       </a>
       <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">☰</button>
       <div class="nav-links" id="navLinks" data-nav-links>
-        <a href="meetings.html">Meetings</a>
-        <a href="workshops.html" aria-current="page">Workshops</a>
+        <a href="meetings.html" aria-current="page">Meetings</a>
+        <a href="workshops.html">Workshops</a>
         <a href="https://discord.gg/Cf4FMZVUBR" target="_blank" rel="noopener">Discord</a>
         <a href="faq.html">FAQ</a>
         <button class="theme-toggle" type="button" data-theme-toggle>🌙</button>
@@ -28,23 +28,22 @@
 
   <header class="hero">
     <div class="hero-inner">
-      <h1>Workshops</h1>
-      <p>Hands-on projects in computer architecture and chip design.</p>
+      <h1>Meeting archive</h1>
+      <p>Browse SIGARCH’s computer architecture materials, embedded directly from the meetings repository.</p>
     </div>
   </header>
 
   <main class="page-shell">
     <div class="page-heading">
       <div>
-        <h1>Build something interesting</h1>
-        <p>Our weekend workshops turn architecture concepts into practical projects, with hardware and guidance available for members at every experience level.</p>
+        <h1>Past meetings</h1>
+        <p>Each PDF is kept in the <code>uiuc-sigarch/meetings</code> Git submodule and rendered in the shared site theme.</p>
       </div>
+      <a class="button-link" href="https://github.com/uiuc-sigarch/meetings" target="_blank" rel="noopener">View source repository</a>
     </div>
 
-    <section class="content-card">
-      <h2>Coming soon</h2>
-      <p>Workshop announcements, project guides, and past-session materials will appear here.</p>
-      <p>Join the <a href="https://discord.gg/Cf4FMZVUBR" target="_blank" rel="noopener">SIGARCH Discord</a> for the next workshop announcement.</p>
+    <section class="meeting-list" data-meetings-index="meetings.json" aria-live="polite">
+      <p class="empty-state">Loading meeting PDFs…</p>
     </section>
   </main>
 

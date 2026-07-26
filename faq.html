@@ -1,138 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="/assets/tab.png">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Frequently Asked Questions</title>
-  <style>
-    :root {
-      --bg: #0b0c0f;
-      --card: #0f1117;
-      --text: #e6e6e6;
-      --muted: #9aa0a6;
-      --link: #8ab4f8;
-      --accent: #3ddc97;
-      --border: #1c2030;
-    }
-    body.light {
-      --bg: #fdfdfd;
-      --card: #ffffff;
-      --text: #202124;
-      --muted: #5f6368;
-      --link: #1a73e8;
-      --accent: #00796b;
-      --border: #e0e0e0;
-    }
-
-    html, body { background: var(--bg); color: var(--text); margin: 0; font: 16px/1.6 system-ui, sans-serif; transition: background 0.3s, color 0.3s; }
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
-
-    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
-    header h1 { font-size: clamp(1.8rem, 2.4vw + 1rem, 2.6rem); margin: 0; letter-spacing: -0.02em; }
-    header .subtitle { color: var(--muted); font-size: 0.95rem; }
-
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.25rem;
-      margin: 1rem 0;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-      transition: background 0.3s, border 0.3s;
-    }
-
-    ol.faq { counter-reset: item; list-style: none; padding: 0; margin: 0; }
-    .faq > li { margin: 1rem 0 1.25rem; }
-    .q { font-weight: 700; display: inline-block; margin-bottom: 0.35rem; }
-    .q::before { counter-increment: item; content: counter(item) ". "; color: var(--accent); font-weight: 700; }
-    .answer p { margin: 0.35rem 0 0.5rem; }
-    .muted { color: var(--muted); }
-
-    .table-wrap { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-    thead th { text-align: left; font-weight: 700; padding: 0.75rem 0.9rem; background: rgba(0,0,0,0.05); border-bottom: 1px solid var(--border); }
-    tbody td { padding: 0.7rem 0.9rem; vertical-align: top; border-bottom: 1px solid var(--border); }
-    tbody tr:hover td { background: rgba(0,0,0,0.03); }
-
-    .note { font-size: 0.95rem; color: var(--muted); }
-
-    .footnotes { margin-top: 2rem; border-top: 1px dashed var(--border); padding-top: 1rem; }
-    .footnotes ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
-    .footnotes li { margin: 0.4rem 0; }
-    .fn-ref { text-decoration: none; font-size: 0.85em; vertical-align: super; }
-    .backref { margin-left: 0.5rem; text-decoration: none; }
-
-    button.toggle, a.home-btn {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.4rem 0.8rem;
-      margin-left: 0.5rem;
-      color: var(--text);
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s, border 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    button.toggle:hover, a.home-btn:hover {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/tab.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+  <title>FAQ | SIGARCH @ UIUC</title>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>Frequently Asked Questions</h1>
-        <div class="subtitle">Computer Architecture @ SIGARCH (UIUC)</div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/tab.png" alt="SIGARCH logo">
+        <span>SIGARCH @ UIUC</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">☰</button>
+      <div class="nav-links" id="navLinks" data-nav-links>
+        <a href="meetings.html">Meetings</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="https://discord.gg/Cf4FMZVUBR" target="_blank" rel="noopener">Discord</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+        <button class="theme-toggle" type="button" data-theme-toggle>🌙</button>
       </div>
-      <div>
-        <a href="index.html" class="home-btn"><img src="assets/logo-small.png" alt="SIGARCH logo"></a>
-        <button class="toggle" id="modeToggle">🌙</button>
-      </div>
-    </header>
+    </div>
+  </nav>
 
-    <main class="card">
+  <main class="page-shell">
+    <div class="page-heading">
+      <div>
+        <h1>Frequently asked questions</h1>
+        <p>Computer architecture @ SIGARCH (UIUC)</p>
+      </div>
+    </div>
+
+    <section class="content-card">
       <ol class="faq">
         <li id="q1">
-          <span class="q">What is computer architecture?<a class="fn-ref" href="#fn1" id="fnref1">[1]</a></span>
+          <span class="question">What is computer architecture?<a class="fn-ref" href="#fn1" id="fnref1">[1]</a></span>
           <div class="answer">
             <p>Computer architecture is the study of how computer systems are designed, built, and organized.</p>
           </div>
         </li>
 
         <li id="q2">
-          <span class="q">Why is it important?</span>
+          <span class="question">Why is it important?</span>
           <div class="answer">
             <p>Faster, smaller, more power-efficient, and more domain-specific computing is a necessity in almost every field. Consider: mobile phones, wearable electronics, architectures for ML, scientific computing, low-latency networking, or simply running a web browser — all these are cases where building progressively “better” computer systems is critical.</p>
           </div>
         </li>
 
         <li id="q3">
-          <span class="q">Why is it interesting?<a class="fn-ref" href="#fn2" id="fnref2">[2]</a></span>
+          <span class="question">Why is it interesting?<a class="fn-ref" href="#fn2" id="fnref2">[2]</a></span>
           <div class="answer">
             <p>It’s a complete answer to the question: “What’s really inside your computer, and how does it work?”</p>
           </div>
         </li>
 
         <li id="q4">
-          <span class="q">What are the current challenges in computer architecture?<a class="fn-ref" href="#fn3" id="fnref3">[3]</a></span>
+          <span class="question">What are the current challenges in computer architecture?<a class="fn-ref" href="#fn3" id="fnref3">[3]</a></span>
           <div class="answer">
             <p>In past years, the industry relied on Moore’s law for improvement in computer speeds. Unfortunately, we’re fast approaching the theoretical limit of transistor size, meaning we must rethink the architecture of computers to better utilize the resources we have available.</p>
           </div>
         </li>
 
         <li id="q5">
-          <span class="q">I’m interested in computer architecture, where should I start learning?</span>
+          <span class="question">I’m interested in computer architecture, where should I start learning?</span>
           <div class="answer">
-            <p>A great place to start is coming to <a href="./meetings.org">SIGARCH meetings</a>! Outside SIGARCH, there are various routes you can take.</p>
+            <p>A great place to start is coming to <a href="./meetings.html">SIGARCH meetings</a>! Outside SIGARCH, there are various routes you can take.</p>
 
             <h3>1) Classes</h3>
             <p class="note">The ECE and CS departments at UIUC both offer classes in computer architecture and related topics:</p>
@@ -175,9 +110,9 @@
           </div>
         </li>
       </ol>
-    </main>
+    </section>
 
-    <section class="footnotes card" id="footnotes">
+    <section class="footnotes content-card" id="footnotes">
       <h3>Footnotes</h3>
       <ol>
         <li id="fn1">In contrast with computer <em>science</em>, which focuses on using computers to perform useful tasks. <a class="backref" href="#fnref1">↩</a></li>
@@ -189,23 +124,8 @@
         <li id="fn7">Fun extension: write a Python assembler/emulator, or an <a href="https://llvm.org/docs/WritingAnLLVMBackend.html">LLVM backend</a>. <a class="backref" href="#fnref7">↩</a></li>
       </ol>
     </section>
-  </div>
+  </main>
 
-  <script>
-    const toggleBtn = document.getElementById("modeToggle");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const savedMode = localStorage.getItem("theme");
-    if (savedMode === "light" || (!savedMode && !prefersDark)) {
-      document.body.classList.add("light");
-      toggleBtn.textContent = "☀️";
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-      const isLight = document.body.classList.contains("light");
-      toggleBtn.textContent = isLight ? "☀️" : "🌙";
-      localStorage.setItem("theme", isLight ? "light" : "dark");
-    });
-  </script>
+  <footer class="site-footer">SIGARCH @ UIUC</footer>
 </body>
 </html>
