@@ -1,0 +1,35 @@
+name: Sync meeting PDFs
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v4
+
+      - name: Fetch and copy meeting PDFs
+        run: |
+          meetings_source="${RUNNER_TEMP}/sigarch-meetings"
+          git clone --depth 1 https://github.com/uiuc-sigarch/meetings.git "$meetings_source"
+          node scripts/sync-meetings.mjs "$meetings_source"
+
+      - name: Commit synchronized PDFs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add meetings meetings.json
+          if git diff --cached --quiet; then
+            echo "Meeting PDFs are already up to date."
+          else
+            git commit -m "Sync meeting PDFs"
+            git push
+          fi

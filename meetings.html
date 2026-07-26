@@ -37,12 +37,12 @@
     <div class="page-heading">
       <div>
         <h1>Past meetings</h1>
-        <p>PDFs are discovered directly from the <code>uiuc-sigarch/meetings</code> repository, grouped by folder, and rendered in the shared site theme.</p>
+        <p>PDFs are copied from the <code>uiuc-sigarch/meetings</code> repository during deployment, grouped by folder, and rendered locally with the shared site theme.</p>
       </div>
       <a class="button-link" href="https://github.com/uiuc-sigarch/meetings" target="_blank" rel="noopener">View source repository</a>
     </div>
 
-    <section class="meeting-list" data-meetings-repo="uiuc-sigarch/meetings" data-meetings-branch="main" aria-live="polite">
+    <section class="meeting-list" data-meetings-index="meetings.json" aria-live="polite">
       <p class="empty-state">Loading meeting PDFs…</p>
     </section>
   </main>

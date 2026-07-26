@@ -13,6 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Fetch meeting PDFs for the build
+      run: |
+        meetings_source="${RUNNER_TEMP}/sigarch-meetings"
+        git clone --depth 1 https://github.com/uiuc-sigarch/meetings.git "$meetings_source"
+        node scripts/sync-meetings.mjs "$meetings_source"
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
