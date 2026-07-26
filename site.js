@@ -54,6 +54,73 @@
     return element;
   }
 
+  function titleize(value) {
+    return value
+      .replace(/\.pdf$/i, "")
+      .replace(/[-_]+/g, " ")
+      .replace(/\b\w/g, function (letter) {
+        return letter.toUpperCase();
+      });
+  }
+
+  function folderLabel(folder) {
+    const folderName = folder.split("/").pop();
+    const match = /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)-(\d{1,2})-(\d{4})$/i.exec(folderName);
+    if (!match) {
+      return titleize(folderName);
+    }
+
+    const months = {
+      jan: "January", feb: "February", mar: "March", apr: "April",
+      may: "May", jun: "June", jul: "July", aug: "August",
+      sep: "September", oct: "October", nov: "November", dec: "December"
+    };
+    return months[match[1].toLowerCase()] + " " + match[2] + ", " + match[3];
+  }
+
+  function folderSortValue(folder) {
+    const folderName = folder.split("/").pop();
+    const match = /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)-(\d{1,2})-(\d{4})$/i.exec(folderName);
+    if (!match) {
+      return 0;
+    }
+    const months = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+    return Date.UTC(Number(match[3]), months[match[1].toLowerCase()], Number(match[2]));
+  }
+
+  function meetingsFromTree(repo, branch, tree) {
+    const groups = new Map();
+    tree
+      .filter(function (entry) {
+        return entry.type === "blob" && entry.path.toLowerCase().endsWith(".pdf");
+      })
+      .forEach(function (entry) {
+        const pathParts = entry.path.split("/");
+        const folder = pathParts.length > 1 ? pathParts.slice(0, -1).join("/") : "root";
+        const encodedPath = entry.path.split("/").map(encodeURIComponent).join("/");
+        const file = {
+          title: titleize(pathParts[pathParts.length - 1]),
+          url: "https://raw.githubusercontent.com/" + repo + "/" + branch + "/" + encodedPath
+        };
+        if (!groups.has(folder)) {
+          groups.set(folder, []);
+        }
+        groups.get(folder).push(file);
+      });
+
+    return Array.from(groups.entries())
+      .map(function (entry) {
+        return {
+          title: folderLabel(entry[0]),
+          date: entry[0],
+          files: entry[1].sort(function (a, b) { return a.title.localeCompare(b.title); })
+        };
+      })
+      .sort(function (a, b) {
+        return folderSortValue(b.date) - folderSortValue(a.date) || b.date.localeCompare(a.date);
+      });
+  }
+
   function renderMeetings(container, meetings) {
     if (!Array.isArray(meetings) || meetings.length === 0) {
       container.replaceChildren(makeElement("p", "empty-state", "No meeting PDFs are available yet."));
@@ -78,15 +145,22 @@
         const header = makeElement("header");
         const heading = makeElement("h3", null, file.title || "Meeting PDF");
         const link = makeElement("a", "button-link", "Open PDF");
-        link.href = file.path;
+        const viewerUrl = "https://mozilla.github.io/pdf.js/web/viewer.html?file=" + encodeURIComponent(file.url);
+        link.href = viewerUrl;
         link.target = "_blank";
         link.rel = "noopener";
         header.append(heading, link);
 
         const frame = document.createElement("iframe");
-        frame.src = file.path;
+        // GitHub serves these files as application/octet-stream, which makes
+        // a direct iframe URL download in some browsers. PDF.js reads the
+        // public PDF URL and renders it inline inside this frame.
+        frame.src = viewerUrl;
         frame.title = (file.title || "Meeting PDF") + " — " + (meeting.date || "SIGARCH meeting");
         frame.loading = "lazy";
+        frame.referrerPolicy = "no-referrer";
+        frame.setAttribute("allowfullscreen", "true");
+        frame.setAttribute("allow", "fullscreen");
 
         pdfCard.append(header, frame);
         files.append(pdfCard);
@@ -96,21 +170,29 @@
     });
   }
 
-  const meetingContainer = document.querySelector("[data-meetings-index]");
+  const meetingContainer = document.querySelector("[data-meetings-repo]");
   if (meetingContainer) {
-    fetch(meetingContainer.dataset.meetingsIndex)
+    const repo = meetingContainer.dataset.meetingsRepo;
+    const branch = meetingContainer.dataset.meetingsBranch || "main";
+    const apiUrl = "https://api.github.com/repos/" + repo + "/git/trees/" + encodeURIComponent(branch) + "?recursive=1";
+
+    fetch(apiUrl, { headers: { Accept: "application/vnd.github+json" } })
       .then(function (response) {
         if (!response.ok) {
-          throw new Error("Could not load the meeting index");
+          throw new Error("Could not load the meetings repository");
         }
         return response.json();
       })
-      .then(function (meetings) {
+      .then(function (repositoryTree) {
+        if (!Array.isArray(repositoryTree.tree)) {
+          throw new Error("The meetings repository returned no file tree");
+        }
+        const meetings = meetingsFromTree(repo, branch, repositoryTree.tree);
         renderMeetings(meetingContainer, meetings);
       })
       .catch(function () {
         meetingContainer.replaceChildren(
-          makeElement("p", "empty-state", "Meeting PDFs are unavailable right now. Please initialize the meetings submodule or try again later.")
+          makeElement("p", "empty-state", "Meeting PDFs are unavailable right now. The archive is discovered directly from GitHub, so please try again later.")
         );
       });
   }

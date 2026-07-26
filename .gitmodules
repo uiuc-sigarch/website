@@ -1,3 +1,0 @@
-[submodule "meetings"]
-	path = meetings
-	url = https://github.com/uiuc-sigarch/meetings.git

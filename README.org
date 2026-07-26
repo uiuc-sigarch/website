@@ -6,29 +6,17 @@ navigation.
 
 ** Meetings archive
 
-Meeting materials live in the public [[https://github.com/uiuc-sigarch/meetings][meetings repository]]
-as a Git submodule. Clone this repository with its materials using:
+Meeting materials live in the public [[https://github.com/uiuc-sigarch/meetings][meetings repository]].
+The website queries that repository's public Git tree at runtime, discovers every
+``.pdf`` file, groups files by their containing folder, and embeds them directly
+from the repository's ``main`` branch.
 
 #+begin_src sh
-git clone --recurse-submodules https://github.com/uiuc-sigarch/website.git
+git clone https://github.com/uiuc-sigarch/website.git
 #+end_src
 
-If the site has already been cloned, initialize the submodule with:
+Adding a new PDF requires only pushing it to the meetings repository in the
+existing folder format. No website edit or manifest update is needed.
 
-#+begin_src sh
-git submodule update --init --recursive
-#+end_src
-
-The PDF files are embedded by [[file:meetings.html][meetings.html]] using the paths in
-[[file:meetings.json][meetings.json]]. After pulling new meeting materials, regenerate the
-manifest and commit the updated manifest together with the submodule pointer:
-
-#+begin_src sh
-git -C meetings pull --ff-only
-node scripts/update-meetings-manifest.mjs
-git add meetings meetings.json
-git commit -m "Update meeting materials"
-#+end_src
-
-The GitHub Actions build initializes submodules before running Jekyll so the
-embedded PDFs are available in the generated site.
+The PDF viewer remains browser-native, while the archive cards and controls use
+the site's shared theme.
