@@ -8,7 +8,7 @@
     <nav class="site-nav" aria-label="Main navigation">
       <div class="nav-inner">
         <a class="brand" href="index.html">
-          <img src="assets/logo-small.png" alt="SIGARCH logo">
+          <img src="assets/tab.png" alt="SIGARCH logo">
           <span>SIGARCH @ UIUC</span>
         </a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="siteNavLinks" aria-label="Open navigation">☰</button>
