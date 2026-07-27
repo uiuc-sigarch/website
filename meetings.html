@@ -5,26 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="assets/tab.png">
   <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
   <script src="site.js" defer></script>
   <title>Meetings | SIGARCH @ UIUC</title>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/tab.png" alt="SIGARCH logo">
-        <span>SIGARCH @ UIUC</span>
-      </a>
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">☰</button>
-      <div class="nav-links" id="navLinks" data-nav-links>
-        <a href="meetings.html" aria-current="page">Meetings</a>
-        <a href="workshops.html">Workshops</a>
-        <a href="https://discord.gg/Cf4FMZVUBR" target="_blank" rel="noopener">Discord</a>
-        <a href="faq.html">FAQ</a>
-        <button class="theme-toggle" type="button" data-theme-toggle>🌙</button>
-      </div>
-    </div>
-  </nav>
+  <div data-site-nav></div>
 
   <header class="hero">
     <div class="hero-inner">

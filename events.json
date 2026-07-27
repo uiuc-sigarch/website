@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "etched",
+    "title": "Etched Event",
+    "date": "February 06, 2026",
+    "description": "A engineering and recruiting event for the Etched.",
+    "luma": "https://luma.com/q6utyi6i",
+    "image": ""
+  },
+  {
+    "slug": "neuralink",
+    "title": "Neuralink Event",
+    "date": "October 08, 2025",
+    "description": "Neurlink engineering and recruiting event",
+    "luma": "https://luma.com/c3homxp6?tk=WVfi1k",
+    "image": "events/neuralink/neuralink.png"
+  }
+]

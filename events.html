@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/tab.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+  <script src="site.js" defer></script>
+  <title>Events | SIGARCH @ UIUC</title>
+</head>
+<body>
+  <div data-site-nav></div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Events</h1>
+      <p>Find upcoming SIGARCH events and RSVP through Luma.</p>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <div class="page-heading">
+      <div>
+        <h1>What’s happening</h1>
+        <p>Event images and details are kept in the <code>events/</code> folder and indexed automatically during deployment.</p>
+      </div>
+    </div>
+
+    <div data-events-index="events.json" aria-live="polite">
+      <section class="event-section" data-event-group="future">
+        <h2>Upcoming events</h2>
+        <div class="events-grid" data-event-list></div>
+        <p class="empty-state" data-event-empty>Loading events…</p>
+      </section>
+      <section class="event-section" data-event-group="past">
+        <h2>Past events</h2>
+        <div class="events-grid" data-event-list></div>
+        <p class="empty-state" data-event-empty>Loading events…</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">SIGARCH @ UIUC · Computer architecture, together.</footer>
+</body>
+</html>

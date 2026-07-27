@@ -18,6 +18,7 @@ jobs:
         meetings_source="${RUNNER_TEMP}/sigarch-meetings"
         git clone --depth 1 https://github.com/uiuc-sigarch/meetings.git "$meetings_source"
         node scripts/sync-meetings.mjs "$meetings_source"
+        node scripts/sync-events.mjs
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \

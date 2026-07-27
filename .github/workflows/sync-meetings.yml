@@ -1,4 +1,4 @@
-name: Sync meeting PDFs
+name: Sync meetings and events
 
 on:
   push:
@@ -22,14 +22,17 @@ jobs:
           git clone --depth 1 https://github.com/uiuc-sigarch/meetings.git "$meetings_source"
           node scripts/sync-meetings.mjs "$meetings_source"
 
+      - name: Generate event index
+        run: node scripts/sync-events.mjs
+
       - name: Commit synchronized PDFs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add meetings meetings.json
+          git add meetings meetings.json events.json
           if git diff --cached --quiet; then
-            echo "Meeting PDFs are already up to date."
+            echo "Meetings and events are already up to date."
           else
-            git commit -m "Sync meeting PDFs"
+            git commit -m "Sync meetings and events"
             git push
           fi
